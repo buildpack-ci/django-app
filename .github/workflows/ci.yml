@@ -1,0 +1,10 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: vincetse/herokuish-action@master
+      env:
+        BUILDPACK_URL: https://github.com/vincetse/heroku-buildpack-python
