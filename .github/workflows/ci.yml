@@ -17,10 +17,11 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: vincetse/herokuish-action@master
+    - name: Clone code repo
+      uses: actions/checkout@v2
+    - name: Build and run unit tests with Buildpack CI
+      uses: buildpack-ci/run-tests@master
       env:
-        BUILDPACK_URL: https://github.com/vincetse/heroku-buildpack-python
+        BUILDPACK_URL: https://github.com/buildpack-ci/heroku-buildpack-multi.git
         DATABASE_URL: postgres://postgres:postgres@postgres:5432/test
