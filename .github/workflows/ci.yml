@@ -25,3 +25,4 @@ jobs:
       env:
         BUILDPACK_URL: https://github.com/buildpack-ci/heroku-buildpack-multi.git
         DATABASE_URL: postgres://postgres:postgres@postgres:5432/test
+        BUILDPACK_MULTI_PASS_IF_MISSING_TEST_SCRIPTS: true
